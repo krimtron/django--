@@ -33,3 +33,4 @@ def create_view(request):
             post.author = request.user
             post.save()
             return redirect('blog:detail' , post_id=post.id)
+
