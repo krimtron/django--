@@ -20,12 +20,8 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [ #google.com/
-    path('order/', include('apps.order.urls')),#google.com/order/
-    path('catalog/', include('apps.catalog.urls')),#google.com/catalog/ 
     path('admin/', admin.site.urls),#google.com/admin/
     path('blog/', include('apps.blog.urls')),#google.com/blog/
     path('members/', include('apps.members.urls')),#google.com/members/
     path('', include('apps.main.urls')),#google.com/
-    path("__debug__/", include("debug_toolbar.urls")),
-    path("ckeditor5/", include('django_ckeditor_5.urls'), name="ck_editor_5_upload_file"),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
